@@ -1,5 +1,27 @@
+.navbar-header h1 {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.navbar-header h1 a {
+	color:white;
+	text-decoration: none;
+}
+/*
 .navbar-inverse .navbar-brand {
 	color:white;
+}
+*/
+
+#logo-title {
+	padding-left: 55px;
+	background-image: url(../img/gotraps-logo_64.png);
+	background-repeat: no-repeat;
+/*	background-position: -5px -5px; */ 
+	overflow: visible; 
+/*	position: absolute; */
 }
 
 #title-discussion {
