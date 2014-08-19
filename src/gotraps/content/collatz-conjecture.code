@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main() {
+	// If this loops forever, I might have broken the Collatz conjecture!!
+	a := 17
+	fmt.Println(a)
+	for a != 1 {
+		if a%2 == 0 {
+			a := a / 2
+			fmt.Println("/2\t=", a)
+		} else {
+			a := 3*a + 1
+			fmt.Println("*3 + 1\t=", a)
+		}
+	}
+}

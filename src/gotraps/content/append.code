@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func main() {
+	a := make([]int, 3, 4)
+	a[0], a[1], a[2] = 0, 1, 2
+
+	b := append(a, 55)
+	b[0] = 5
+	c := append(a, 77)
+	c[0] = 7
+
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+}
