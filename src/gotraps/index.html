@@ -52,21 +52,24 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">Slice traversal</a></li>
-            <li><a href="#">Map traversal</a></li>
-            <li><a href="#">String traversal</a></li>
-            <li><a href="#">Collatz conjecture</a></li>
-            <li><a href="#">Append</a></li>
-            <li><a href="#">Range</a></li>
-            <li><a href="#">Map indexing</a></li>
-            <li><a href="#">Server loop</a></li>
+            <li><a href="#slice-traversal">Slice traversal</a></li>
+            <li><a href="#map-traversal">Map traversal</a></li>
+            <li><a href="#string-traversal">String traversal</a></li>
+            <li><a href="#collatz-conjecture">Collatz conjecture</a></li>
+            <li><a href="#append">Append</a></li>
+            <li><a href="#range">Range</a></li>
+            <li><a href="#map-indexing">Map indexing</a></li>
+            <li><a href="#server-loop">Server loop</a></li>
           </ul>
-          
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Trap title</h1>
           
-	          <h2 class="sub-header">Code</h2>
+          <p>
+          	Statement paragraph
+          </p>
+          
+	          <h3 class="sub-header">Code</h3>
 	          	           
 				<pre id="gotrap-code" class="prettyprint lang-go">
 package main
@@ -75,13 +78,21 @@ import "fmt"
 
 // Comment
 func main() {
+	go run()
 	fmt.Println("Trap")
 }
 				</pre>
 				
-	          <h2 class="sub-header">Output</h2>
-	          <h2 class="sub-header">Discussion</h2>
-
+			  <button class="btn">Run</button>
+			  
+	          <h3 class="sub-header" id="title-stdout">Output</h3>
+	          <div id="stdout" class="collapse">
+	          	Standard output + standard error
+	          </div>
+	          <h3 class="sub-header" id="title-discussion">Discussion</h3>
+			  <p id="discussion" class="collapse">
+			    The explanations.
+			  </p>
 			</div>
 		</div>
           
@@ -94,6 +105,8 @@ func main() {
     <script src="static/default/js/bootstrap.js"></script>
     <script src="static/default/js/docs.js"></script>
     <script src="static/default/js/prettify.js"></script>
+    <script src="static/default/js/prettify-extra-language-go.js"></script>
+    <script src="static/default/js/gotraps.js"></script>
    	<script>$(function() { prettyPrint(); });</script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

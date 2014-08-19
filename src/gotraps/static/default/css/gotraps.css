@@ -1,3 +1,7 @@
 .navbar-inverse .navbar-brand {
 	color:white;
-} 
+}
+
+#title-discussion {
+	cursor: pointer;
+}
