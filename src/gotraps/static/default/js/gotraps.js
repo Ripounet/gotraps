@@ -7,10 +7,8 @@
 	$("#title-discussion").click(function() {
 		$("#trap-discussion").collapse("toggle");
 	});
-
 	
 	function switchToZone(zone){
-		console.log(zone);
 		["#overview", "#trap-zone", "#see-also"].forEach(function(z){
 			if( z == zone ){
 				if( ! $(z).is(":visible") )
@@ -64,7 +62,6 @@
 		//var compileUrl = "http://play.golang.org/compile"; 
 		// ^^ would fails due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
-		//alert(code);
 		$.post( compileUrl, 
 				{ version: "2", body: code },
 				function(data) {
@@ -84,4 +81,12 @@
 		switchToZone("#see-also");
 	});
 	
+	$(".sidebar li a").click(function() {
+		$(".sidebar li").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+
+	function log(msg){
+		console.log(msg);
+	}
 })(jQuery);
