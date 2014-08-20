@@ -10,22 +10,19 @@ import (
 
 //
 // Just forward the response from another site, to the user.
-// Used to bypass the "Access-Control-Allow-Origin" for simple non-private resources.
+// Used to bypass the "Access-Control-Allow-Origin" for Go snippet compilation+execution.
 //
 func compile(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 	
 	remoteUrl := "http://play.golang.org/compile"
-	//bodyType := "application/x-www-form-urlencoded"  // ??
 	trapcode := r.FormValue("body") 
 	values := url.Values{
 		"version": []string{ "2" },
 		"body": []string{ trapcode },
 	}
-	c.Infof("%v", values)
+	//c.Infof("%v", values)
 
-	//resp, err := urlfetch.Client(c).Get(url)
-	//resp, err := urlfetch.Client(c).Post(url, bodyType, nil)
 	resp, err := urlfetch.Client(c).PostForm(remoteUrl, values)
 	if err != nil {
 		c.Errorf("%v", err)
