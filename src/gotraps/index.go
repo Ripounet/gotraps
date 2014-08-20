@@ -1,6 +1,8 @@
 // Go Traps server-side processing (if ever needed)
 package gotraps
 
+import "net/http"
+
 func init() {
-	// Nothing
+	http.HandleFunc("/compile", compile)
 }

@@ -24,6 +24,10 @@
 /*	position: absolute; */
 }
 
+#compile-errors{
+	color: #B00;
+}
+
 #title-discussion {
 	cursor: pointer;
 }

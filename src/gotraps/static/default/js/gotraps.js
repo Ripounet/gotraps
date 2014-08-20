@@ -8,7 +8,16 @@
 		$("#discussion").collapse('toggle');
 	});
 	
+	function resetView(){
+		$("#gotrap-code").html("");
+		$("#stdout").html("");
+		$("#stdout").collapse("hide");
+		$("#compile-errors").html("");
+		$("#compile-errors").collapse("hide");
+	}
+	
 	$("a.trap-link").click(function() {
+		resetView();
 		var item = $(this).attr("href");
 		item = item.substring(1);  // Remove the #
 		var codepath = "content/" + item + ".code";
@@ -21,11 +30,19 @@
 	
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
-		alert(code);
-		$.post("http://play.golang.org/compile", 
+		//var compileUrl = "http://play.golang.org/compile"; 
+		var compileUrl = "/compile";  // <- this is a custom proxy
+		//alert(code);
+		$.post( compileUrl, 
 				{ version: "2", body: code },
 				function(data) {
-					alert(data);
+					//alert(data);
+					var events = data.Events;
+					var event = events[0];
+					var output = event.Message;
+					$("#stdout").html(output);
+					$("#stdout").collapse("show");
+					$("#compile-errors").collapse("show");
 				},
 				"json");
 		// "json" fails due to same-origin policy
