@@ -5,10 +5,26 @@
 	});
 
 	$("#title-discussion").click(function() {
-		$("#discussion").collapse('toggle');
+		$("#trap-discussion").collapse("toggle");
 	});
+
 	
-	function resetView(){
+	function switchToZone(zone){
+		console.log(zone);
+		["#overview", "#trap-zone", "#see-also"].forEach(function(z){
+			if( z == zone ){
+				if( ! $(z).is(":visible") )
+					$(z).collapse("show");
+			}else{
+				if( $(z).is(":visible") )
+					$(z).collapse("hide");
+			}
+		});
+	}
+	
+	function resetTrapView(){
+		switchToZone("#trap-zone");
+		
 		$("#gotrap-code").html("");
 		$("#stdout").html("");
 		$("#stdout").collapse("hide");
@@ -16,21 +32,37 @@
 		$("#compile-errors").collapse("hide");
 	}
 	
+	$("#overview-link").click(function() {
+		switchToZone("#overview");
+	});
+	
 	$("a.trap-link").click(function() {
-		resetView();
+		resetTrapView();
 		var item = $(this).attr("href");
 		item = item.substring(1);  // Remove the #
+		
+		// Get the snippet
 		var codepath = "content/" + item + ".code";
 		$.get(codepath, function(data) {
 			var code= data;
 			$("#gotrap-code").html(code);
 			$("#gotrap-code-hidden").html(code);
 		});
+		
+		// Get the trap metadata
+		var metapath = "content/" + item + ".json";
+		$.getJSON(metapath, function(data, status, xhr) {
+			var trap= data.trap;
+			$("#trap-title").html(trap.title);
+			$("#trap-intro").html(trap.intro);
+			$("#trap-discussion").html(trap.discussion);
+		});
 	});
 	
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
 		//var compileUrl = "http://play.golang.org/compile"; 
+		// ^^ would fails due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
 		//alert(code);
 		$.post( compileUrl, 
@@ -45,9 +77,11 @@
 					$("#compile-errors").collapse("show");
 				},
 				"json");
-		// "json" fails due to same-origin policy
-		// "jsonp" fails because can't POST, and service does not accept GET
-		// todo: a small handler proxyCompile
+	});
+
+	
+	$("#see-also-link").click(function() {
+		switchToZone("#see-also");
 	});
 	
 })(jQuery);
