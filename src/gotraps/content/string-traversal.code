@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	str := "Café society"
+	str := "Café-society"
 
 	for i, c := range str {
 		fmt.Printf("Character #%v is %v \n", i, string(c))

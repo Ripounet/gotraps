@@ -7,6 +7,6 @@ func main() {
 	nephews = append(nephews, "Louie")
 
 	for nephew := range nephews {
-		fmt.Println("Hello ", nephew)
+		fmt.Println("Hello", nephew)
 	}
 }

@@ -12,6 +12,6 @@ func main() {
 	m["five"] = 5
 
 	for name, value := range m {
-		fmt.Println(name, " is english for number", value)
+		fmt.Println(name, "is english for number", value)
 	}
 }
