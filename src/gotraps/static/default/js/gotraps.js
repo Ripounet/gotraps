@@ -28,6 +28,8 @@
 		$("#stdout").collapse("hide");
 		$("#compile-errors").html("");
 		$("#compile-errors").collapse("hide");
+		$("#trap-discussion").html("");
+		$("#trap-discussion").collapse("hide");
 	}
 	
 	$("#overview-link").click(function() {

@@ -1,7 +1,0 @@
-{
- "trap": { 
- 	"title": "Range",
- 	"intro": "How many nephews will be greeted?",
- 	"discussion": "<b>range</b> with only one variable yields the index, not the value."
- }
-}
