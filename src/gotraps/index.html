@@ -113,18 +113,38 @@ func main() {
 						  <button class="btn" id="btn-run">Run</button>
 						</div>
 				        <div class="col-xs-10">
-				          <h3 class="sub-header" id="title-stdout">Output</h3>
-				          <pre id="stdout" class="collapse">
-				          </pre>
+				        
+							<div class="panel panel-default">
+							    <div class="panel-heading">
+							      <h4 class="panel-title">
+							        <a data-toggle="collapse" href="#collapse-output">Output</a>
+							      </h4>
+							    </div>
+							    <div id="collapse-output" class="panel-collapse collapse">
+							      <div class="panel-body">
+							          <pre id="stdout">
+							          </pre>
+							      </div>
+								</div>
+							</div>
+				        
 				          <pre id="compile-errors" class="collapse">
 				          </pre>
 				        </div>
 				      </div>
 				    </div>
-				          
-		          <h3 class="sub-header" id="title-discussion">Discussion</h3>
-				  <p id="trap-discussion" class="collapse">
-				  </p>
+				  
+					<div class="panel panel-default">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a data-toggle="collapse" href="#collapse-discussion">Discussion</a>
+					      </h4>
+					    </div>
+					    <div id="collapse-discussion" class="panel-collapse collapse">
+					      <div id="trap-discussion" class="panel-body"></div>
+						</div>
+					</div>
+              
 			</div>
 				
 			<div id="see-also" class="collapse">

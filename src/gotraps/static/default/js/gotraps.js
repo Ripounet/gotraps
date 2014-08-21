@@ -17,14 +17,14 @@
 		
 		$("#gotrap-code").html("");
 		$("#stdout").html("");
-		if( $("#stdout").is(":visible") )
-			$("#stdout").collapse("hide");
+		if( $("#collapse-output").is(":visible") )
+			$("#collapse-output").collapse("hide");
 		$("#compile-errors").html("");
 		if( $("#compile-errors").is(":visible") )
 			$("#compile-errors").collapse("hide");
 		$("#trap-discussion").html("");
-		if( $("#trap-discussion").is(":visible") )
-			$("#trap-discussion").collapse("hide");
+		if( $("#collapse-discussion").is(":visible") )
+			$("#collapse-discussion").collapse("hide");
 	}
 	
 	$("#overview-link").click(function() {
@@ -67,16 +67,12 @@
 					var event = events[0];
 					var output = event.Message;
 					$("#stdout").html(output);
-					$("#stdout").collapse("show");
+					$("#collapse-output").collapse("show");
 					$("#compile-errors").collapse("show");
 				},
 				"json");
 	});
 
-	$("#title-discussion").click(function() {
-		$("#trap-discussion").collapse("toggle");
-	});
-	
 	$("#see-also-link").click(function() {
 		switchToZone("#see-also");
 	});
