@@ -1,7 +1,7 @@
 {
  "trap": { 
  	"title": "Collatz conjecture",
- 	"intro": "Does the <a href=\"http://en.wikipedia.org/wiki/Collatz_conjecture\">Collatz conjecture</a> still holds for value 17?",
+ 	"intro": "Does the <a href=\"http://en.wikipedia.org/wiki/Collatz_conjecture\">Collatz conjecture</a> still hold for value 17?",
  	"discussion": "The bucktooth operator <b>:=</b> declares a new variable, and is capable of <b>shadowing</b> a previously declared variable. Outer variable <b>a</b> is never modified and the loop keeps spinning. New variables with same name <b>a</b> are declared (by mistake) inside the if/else blocks."
  }
 }
