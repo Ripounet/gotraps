@@ -1,7 +1,7 @@
 {
  "trap": { 
  	"title": "Server main loop",
- 	"intro": "",
- 	"discussion": ""
+ 	"intro": "A <b>select</b> inside a <b>for</b> is a common idiom for receiving various events in a loop.<br/> This code wants to find the 3 smallest positive integers that are multiples of 17 and 38. What does it print?",
+ 	"discussion": "Using <b>break</b> here does not exit the <b>for</b> loop, it exits the <b>select</b> block. This is counterintuitive because there is no possible fallthrough between cases in a <b>select</b>."
  }
 }
