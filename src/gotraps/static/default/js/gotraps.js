@@ -1,13 +1,5 @@
 (function($) {
 	
-	$("#title-stdout").click(function() {
-		$("#stdout").collapse('toggle');
-	});
-
-	$("#title-discussion").click(function() {
-		$("#trap-discussion").collapse("toggle");
-	});
-	
 	function switchToZone(zone){
 		["#overview", "#trap-zone", "#see-also"].forEach(function(z){
 			if( z == zone ){
@@ -78,6 +70,9 @@
 				"json");
 	});
 
+	$("#title-discussion").click(function() {
+		$("#trap-discussion").collapse("toggle");
+	});
 	
 	$("#see-also-link").click(function() {
 		switchToZone("#see-also");

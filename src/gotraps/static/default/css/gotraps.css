@@ -5,12 +5,11 @@
 	padding-bottom: 10px;
 }	
 .navbar-header h1 {
-	/* Fun text rotation 
-	*/
+	/* Fun text rotation */
 	-webkit-transform: rotate(-3deg);
 	-moz-transform: rotate(-3deg);
-	-o-transform: rotate(-5deg);
-	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
 }
 
 .navbar-header h1 a {
