@@ -17,11 +17,14 @@
 		
 		$("#gotrap-code").html("");
 		$("#stdout").html("");
-		$("#stdout").collapse("hide");
+		if( $("#stdout").is(":visible") )
+			$("#stdout").collapse("hide");
 		$("#compile-errors").html("");
-		$("#compile-errors").collapse("hide");
+		if( $("#compile-errors").is(":visible") )
+			$("#compile-errors").collapse("hide");
 		$("#trap-discussion").html("");
-		$("#trap-discussion").collapse("hide");
+		if( $("#trap-discussion").is(":visible") )
+			$("#trap-discussion").collapse("hide");
 	}
 	
 	$("#overview-link").click(function() {
