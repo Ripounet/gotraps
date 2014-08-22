@@ -1,14 +1,23 @@
 (function($) {
 	
+	function show(id){
+		var elt = $(id);
+		if( ! elt.is(":visible") )
+			elt.collapse("show");
+	}
+	
+	function hide(id){
+		var elt = $(id);
+		if( elt.is(":visible") )
+			elt.collapse("hide");
+	}
+	
 	function switchToZone(zone){
 		["#overview", "#trap-zone", "#see-also"].forEach(function(z){
-			if( z == zone ){
-				if( ! $(z).is(":visible") )
-					$(z).collapse("show");
-			}else{
-				if( $(z).is(":visible") )
-					$(z).collapse("hide");
-			}
+			if( z == zone )
+				show(z);
+			else
+				hide(z);
 		});
 	}
 	
@@ -17,14 +26,12 @@
 		
 		$("#gotrap-code").html("");
 		$("#stdout").html("(No output before you click the [Run] button)");
-		if( $("#collapse-output").is(":visible") )
-			$("#collapse-output").collapse("hide");
+		$("#compile-errors").html("(No errors before you click the [Run] button)");
+		hide("#collapse-output");
 		$("#compile-errors").html("");
-		if( $("#compile-errors").is(":visible") )
-			$("#compile-errors").collapse("hide");
+		hide("#compile-errors");
 		$("#trap-discussion").html("");
-		if( $("#collapse-discussion").is(":visible") )
-			$("#collapse-discussion").collapse("hide");
+		hide("#collapse-discussion");
 	}
 	
 	$("#overview-link").click(function() {
@@ -57,8 +64,12 @@
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
 		//var compileUrl = "http://play.golang.org/compile"; 
-		// ^^ would fails due to same-origin policy!
+		// ^^ would fail due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
+		show("#collapse-output");
+		show("#stdout");
+		// Todo spinner
+		$("#stdout").html("<i>compiling...</i>");
 		$.post( compileUrl, 
 				{ version: "2", body: code },
 				function(data) {
@@ -69,10 +80,15 @@
 						output += event.Message;
 					});
 					$("#stdout").html(output);
-					$("#collapse-output").collapse("show");
-					$("#compile-errors").collapse("show");
+					hide("#compile-errors");
 				},
-				"json");
+				"json")
+			    .fail( function(xhr, textStatus, errorThrown) {
+			        var response = xhr.responseJSON;
+			        $("#compile-errors").html(response.Errors);
+					show("#compile-errors");
+					hide("#stdout");
+			    });
 	});
 
 	$("#see-also-link").click(function() {
