@@ -3,6 +3,7 @@ package gotraps
 import (
 	"appengine"
 	"appengine/urlfetch"
+	"html"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -16,7 +17,9 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 	
 	remoteUrl := "http://play.golang.org/compile"
-	trapcode := r.FormValue("body") 
+	trapcodeEscaped := r.FormValue("body")
+	//c.Infof("%v", trapcodeEscaped) 
+	trapcode := html.UnescapeString(trapcodeEscaped)
 	values := url.Values{
 		"version": []string{ "2" },
 		"body": []string{ trapcode },
