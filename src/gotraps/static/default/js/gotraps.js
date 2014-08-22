@@ -16,7 +16,7 @@
 		switchToZone("#trap-zone");
 		
 		$("#gotrap-code").html("");
-		$("#stdout").html("");
+		$("#stdout").html("(No output before you click the [Run] button)");
 		if( $("#collapse-output").is(":visible") )
 			$("#collapse-output").collapse("hide");
 		$("#compile-errors").html("");
