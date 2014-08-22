@@ -16,11 +16,13 @@
 	color:white;
 	text-decoration: none;
 }
-/*
-.navbar-inverse .navbar-brand {
-	color:white;
+
+#logo-title {
+	padding-left: 55px;
+	background-image: url(../img/gotraps-logo_64.png);
+	background-repeat: no-repeat;
+	overflow: visible; 
 }
-*/
 
 /* Poor attempt to keep sidebar on mobile */
 @media (max-width: 768px) {
@@ -41,13 +43,8 @@
 	font-weight: bold;
 }
 
-#logo-title {
-	padding-left: 55px;
-	background-image: url(../img/gotraps-logo_64.png);
-	background-repeat: no-repeat;
-/*	background-position: -5px -5px; */ 
-	overflow: visible; 
-/*	position: absolute; */
+#overview .illustration {
+	margin: 20px;
 }
 
 #compile-errors{
