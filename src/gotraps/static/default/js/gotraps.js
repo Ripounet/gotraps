@@ -64,8 +64,10 @@
 				function(data) {
 					//alert(data);
 					var events = data.Events;
-					var event = events[0];
-					var output = event.Message;
+					var output = "";
+					events.forEach(function(event){
+						output += event.Message;
+					});
 					$("#stdout").html(output);
 					$("#collapse-output").collapse("show");
 					$("#compile-errors").collapse("show");
