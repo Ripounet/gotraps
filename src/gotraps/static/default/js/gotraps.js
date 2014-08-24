@@ -47,7 +47,7 @@
 	});
 	
 	function loadTrap(item){
-		console.log("loadTrap("+item+")");
+		//console.log("loadTrap("+item+")");
 		// Get the snippet
 		var codepath = "content/" + item + ".code";
 		$.get(codepath, function(data) {
