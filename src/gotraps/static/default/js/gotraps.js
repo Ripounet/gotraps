@@ -43,6 +43,11 @@
 		var item = $(this).attr("href");
 		item = item.substring(1);  // Remove the #
 		
+		loadTrap(item);
+	});
+	
+	function loadTrap(item){
+		console.log("loadTrap("+item+")");
 		// Get the snippet
 		var codepath = "content/" + item + ".code";
 		$.get(codepath, function(data) {
@@ -59,7 +64,7 @@
 			$("#trap-intro").html(trap.intro);
 			$("#trap-discussion").html(trap.discussion);
 		});
-	});
+	}
 	
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
@@ -99,6 +104,27 @@
 		$(".sidebar li").removeClass("active");
 		$(this).parent().addClass("active");
 	});
+	
+	// Bookmarkable anchors
+	if( window.location.hash.indexOf("#") != -1 ){
+		$(".sidebar li").removeClass("active");
+		var hash = window.location.hash;
+		hash = hash.substr(1);  // Remove #
+		if( hash == "overview" ){
+			switchToZone("#overview");
+			$("#overview-link").parent().addClass("active");
+		}else if( hash == "see-also" ){
+			switchToZone("#see-also");
+			$("#see-also-link").parent().addClass("active");
+		}else{
+			resetTrapView();
+			loadTrap(hash);
+			$(".trap-link").each(function(){
+				if( $(this).attr("href") == "#"+hash )
+					$(this).parent().addClass("active");
+			});
+		}
+	}
 
 	function log(msg){
 		console.log(msg);
