@@ -24,7 +24,9 @@
 	function resetTrapView(){
 		switchToZone("#trap-zone");
 		
-		$("#gotrap-code").html("");
+		$("#trap-title").html("...");
+		$("#trap-intro").html("<i>loading...</i>");
+		$("#gotrap-code").html("<i>loading...</i>");
 		$("#stdout").html("(No output before you click the [Run] button)");
 		$("#compile-errors").html("(No errors before you click the [Run] button)");
 		hide("#collapse-output");
@@ -73,7 +75,7 @@
 		var compileUrl = "/compile";  // <- this is a custom proxy
 		show("#collapse-output");
 		show("#stdout");
-		// Todo spinner
+		// Todo spinner?
 		$("#stdout").html("<i>compiling...</i>");
 		$.post( compileUrl, 
 				{ version: "2", body: code },
