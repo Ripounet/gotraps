@@ -60,6 +60,7 @@
 
 .footer {
 	margin-top: 60px;
-	width: 100%;
+	padding-top: 5px;
+	padding-left: 5px;
 	background-color: #f5f5f5;
 }
