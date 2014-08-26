@@ -28,7 +28,7 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	//c.Infof("%v", values)
 
 	resp, err := post(c, values)
-	c.Infof("%v", resp)
+	//c.Infof("%v", resp)
 	if err != nil {
 		c.Errorf("%v", err)
 		sendJsonError(w, err)
