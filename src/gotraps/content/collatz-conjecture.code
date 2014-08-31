@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	// If this loops forever, I might have broken the Collatz conjecture!!
-	a := 17
+	a := 1859
 	fmt.Println(a)
 	for a != 1 {
 		if a%2 == 0 {

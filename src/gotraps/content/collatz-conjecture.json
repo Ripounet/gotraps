@@ -1,6 +1,6 @@
 {
  "trap": { 
  	"title": "Collatz",
- 	"intro": "Does the <a href=\"http://en.wikipedia.org/wiki/Collatz_conjecture\">Collatz conjecture</a> still hold for value 17?"
+ 	"intro": "Does the <a href=\"http://en.wikipedia.org/wiki/Collatz_conjecture\">Collatz conjecture</a> still hold for value 1859?"
  }
 }
