@@ -1,7 +1,6 @@
 {
  "trap": { 
  	"title": "Slice traversal",
- 	"intro": "How many nephews will be greeted?",
- 	"discussion": "<b><a href=\"https://golang.org/doc/effective_go.html#for\">range</a></b> with only one variable yields the index, not the value. To iterate over the values and ignore the indexes, use the <a href=\"https://golang.org/doc/effective_go.html#blank\">blank identifier</a> : <code>for _, nephew := range nephews</code>"
+ 	"intro": "How many nephews will be greeted?"
  }
 }

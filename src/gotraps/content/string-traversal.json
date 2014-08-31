@@ -1,7 +1,6 @@
 {
  "trap": { 
  	"title": "String traversal",
- 	"intro": "You can iterate on characters of a string. What will be printed?",
- 	"discussion": "Strings are just slices of bytes, and are not required to be UTF-8 encoded. But the <b>range</b> loop assumes UTF-8 encoding. The value is the <b>rune</b> (like a character), and the index is the number of the byte (not the number of the rune). Thus, when the multi-byte character <b>é</b> is encountered, the index 4 is skipped.<br/>Reference:\n<ul>\n<li>\n<a href=\"http://blog.golang.org/strings\">http://blog.golang.org/strings</a>\n</li>\n</ul>"
+ 	"intro": "You can iterate on characters of a string. What will be printed?"
  }
 }

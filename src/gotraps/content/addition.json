@@ -1,7 +1,6 @@
 {
  "trap": { 
  	"title": "Addition",
- 	"intro": "Are you good at mental calculation? Can you guess the result before running this code?",
- 	"discussion": "Go allows <a href=\"https://golang.org/ref/spec#Integer_literals\">octal integer litterals</a> with prefix 0. Yes, it is kind of anachronic. Yes, it is error-prone and leads to subtle bugs."
+ 	"intro": "Are you good at mental calculation? Can you guess the result before running this code?"
  }
 }

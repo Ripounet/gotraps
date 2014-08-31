@@ -64,7 +64,13 @@
 			var trap= data.trap;
 			$("#trap-title").html(trap.title);
 			$("#trap-intro").html(trap.intro);
-			$("#trap-discussion").html(trap.discussion);
+		});
+
+		// Get the discussion text
+		var discussionpath = "content/" + item + ".discussion";
+		$.get(discussionpath, function(data) {
+			var discussion= data;
+			$("#trap-discussion").html(discussion);
 		});
 	}
 	

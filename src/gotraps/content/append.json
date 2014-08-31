@@ -1,7 +1,6 @@
 {
  "trap": { 
  	"title": "Append",
- 	"intro": "Built-in function <b><a href=\"http://golang.org/doc/effective_go.html#append\">append</a></b> takes a slice as parameter, appends an element to it, and returns the new slice. <br/> Does it lead to buffer overflow? No, because the slice grows when needed by automatic reallocation. <br/> Is it safe to append concurrently to the same slice by multiple goroutines? No, the programmer must carefully think about synchronization to avoid race conditions. <br/> So will it behave as expected when used in a single goroutine? Well, try to understand this code and guess the output:",
- 	"discussion": "<b>append</b> can be elusive because its argument and its result may share the same underlying array... or not. Sometimes it will overwrite existing values that are beyong initial length but within initial capacity.<br/>\nReferences : <ul><li><a href=\"http://blog.golang.org/slices\">http://blog.golang.org/slices</a></li><li><a href=\"https://code.google.com/p/go-wiki/wiki/SliceTricks\">https://code.google.com/p/go-wiki/wiki/SliceTricks</a></li></ul>"
+ 	"intro": "Built-in function <b><a href=\"http://golang.org/doc/effective_go.html#append\">append</a></b> takes a slice as parameter, appends an element to it, and returns the new slice. <br/> Does it lead to buffer overflow? No, because the slice grows when needed by automatic reallocation. <br/> Is it safe to append concurrently to the same slice by multiple goroutines? No, the programmer must carefully think about synchronization to avoid race conditions. <br/> So will it behave as expected when used in a single goroutine? Well, try to understand this code and guess the output:"
  }
 }

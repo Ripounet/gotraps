@@ -1,0 +1,7 @@
+<b>append</b> can be elusive because its argument and its result may share the same underlying array... or not. 
+Sometimes it will overwrite existing values that are beyong initial length but within initial capacity.<br>
+References : 
+<ul>
+	<li><a href="http://blog.golang.org/slices">http://blog.golang.org/slices</a></li>
+	<li><a href="https://code.google.com/p/go-wiki/wiki/SliceTricks">https://code.google.com/p/go-wiki/wiki/SliceTricks</a></li>
+</ul>

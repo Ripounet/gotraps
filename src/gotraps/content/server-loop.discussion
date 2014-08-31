@@ -1,0 +1,3 @@
+Using <b>break</b> here does not exit the <b>for</b> loop, it exits the <b>select</b> block. This is counterintuitive 
+because there is no possible fallthrough between cases in a <b>select</b>. You may however add a <b>label</b> on the 
+for loop, and use this label with break.
