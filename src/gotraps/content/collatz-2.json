@@ -1,0 +1,6 @@
+{
+ "trap": { 
+ 	"title": "Collatz again",
+ 	"intro": "This one is easier. It doesn't crash, it doesn't spin, and values are small. What does it print?"
+ }
+}
