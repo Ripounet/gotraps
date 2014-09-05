@@ -1,0 +1,3 @@
+The <a href="http://golang.org/ref/spec#RangeClause">range clause</a> always gives a copy of the original value. 
+It cannot be used to modify a value. 
+However, when iterating over pointers it is of course possible to modify the "pointed" objects.
