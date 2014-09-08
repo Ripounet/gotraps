@@ -38,6 +38,7 @@
 	
 	$("#overview-link").click(function() {
 		switchToZone("#overview");
+		hide(".navbar-collapse.trap-list");
 	});
 	
 	$("a.trap-link").click(function() {
@@ -107,6 +108,7 @@
 
 	$("#see-also-link").click(function() {
 		switchToZone("#see-also");
+		hide(".navbar-collapse.trap-list");
 	});
 	
 	$(".sidebar li a").click(function() {

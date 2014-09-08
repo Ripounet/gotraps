@@ -56,10 +56,13 @@
 
 .trap-link{
 	font-weight: bold;
-}
 
-.main{
-	/* padding-top: 60px;   >p */
+
+
+@media (max-width: 768px) {
+  .main{
+  	 margin-top: 60px;
+  }
 }
 
 #overview .illustration {
