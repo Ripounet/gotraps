@@ -67,7 +67,7 @@
 		});
 
 		// Get the discussion text
-		var discussionpath = "content/" + item + ".discussion";
+		var discussionpath = "content/" + item + ".discussion.html";
 		$.get(discussionpath, function(data) {
 			var discussion= data;
 			$("#trap-discussion").html(discussion);

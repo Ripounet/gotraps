@@ -6,11 +6,12 @@ type Point struct{ x, y int }
 
 func main() {
 	s := []Point{
-		{1, 1},
-		{2, 2},
+		{1, 2},
+		{3, 4},
 	}
+	// Diagonal symmetry: just swap x and y
 	for _, p := range s {
-		p.y++
+		p.x, p.y = p.y, p.x
 	}
 	fmt.Println(s)
 }
