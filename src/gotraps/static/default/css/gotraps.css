@@ -1,3 +1,7 @@
+.navbar-header{
+	z-index: 850;
+}
+
 .navbar-header h1 {
 	margin-top: 2px;
 	margin-bottom: 2px;
@@ -24,7 +28,7 @@
 	overflow: visible; 
 }
 
-/* Poor attempt to keep sidebar on mobile */
+/* Poor attempt to keep sidebar on mobile 
 @media (max-width: 768px) {
   .sidebar {
     bottom: 0;
@@ -38,9 +42,24 @@
     border-right: 1px solid #eee;
   }
 }
+*/
+
+@media (min-width: 768px) {
+	.navbar-collapse.collapse.trap-list{
+		display: none !important;
+	}
+}
+.navbar-toggle{
+	z-index: 860;
+}
+
 
 .trap-link{
 	font-weight: bold;
+}
+
+.main{
+	/* padding-top: 60px;   >p */
 }
 
 #overview .illustration {

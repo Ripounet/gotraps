@@ -1,13 +1,13 @@
 (function($) {
 	
-	function show(id){
-		var elt = $(id);
+	function show(selector){
+		var elt = $(selector);
 		if( ! elt.is(":visible") )
 			elt.collapse("show");
 	}
 	
-	function hide(id){
-		var elt = $(id);
+	function hide(selector){
+		var elt = $(selector);
 		if( elt.is(":visible") )
 			elt.collapse("hide");
 	}
@@ -45,6 +45,7 @@
 		var item = $(this).attr("href");
 		item = item.substring(1);  // Remove the #
 		
+		hide(".navbar-collapse.trap-list");
 		loadTrap(item);
 	});
 	
