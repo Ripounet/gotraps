@@ -1,0 +1,6 @@
+{
+ "trap": { 
+ 	"title": "Mean",
+ 	"intro": "If we use integer division the calculate the mean value of <code>a</code> and <code>b</code>, we will \"lose\" the remainder of the division. So it is possible that <code>2*integerMean(a,b) != a+b</code>. <br/>Should we expect the resulting approximate value to be smaller than the inputs, greater, or between them?"
+ }
+}
