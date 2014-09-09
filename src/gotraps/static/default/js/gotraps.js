@@ -36,7 +36,7 @@
 		hide("#collapse-discussion");
 	}
 	
-	$("#overview-link").click(function() {
+	$(".overview-link").click(function() {
 		switchToZone("#overview");
 		hide(".navbar-collapse.trap-list");
 	});
@@ -106,15 +106,20 @@
 			    });
 	});
 
-	$("#see-also-link").click(function() {
+	$(".see-also-link").click(function() {
 		switchToZone("#see-also");
 		hide(".navbar-collapse.trap-list");
 	});
 	
-	$(".sidebar li a").click(function() {
+	
+	function highlightTrapInMenus(){
 		$(".sidebar li").removeClass("active");
+		$(".trap-list li").removeClass("active");
 		$(this).parent().addClass("active");
-	});
+	}
+	
+	$(".trap-list li a").click(highlightTrapInMenus);
+	$(".sidebar li a").click(highlightTrapInMenus);
 	
 	// Bookmarkable anchors
 	if( window.location.hash.indexOf("#") != -1 ){
@@ -123,10 +128,10 @@
 		hash = hash.substr(1);  // Remove #
 		if( hash == "overview" ){
 			switchToZone("#overview");
-			$("#overview-link").parent().addClass("active");
+			$(".overview-link").parent().addClass("active");
 		}else if( hash == "see-also" ){
 			switchToZone("#see-also");
-			$("#see-also-link").parent().addClass("active");
+			$(".see-also-link").parent().addClass("active");
 		}else{
 			resetTrapView();
 			loadTrap(hash);

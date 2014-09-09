@@ -56,12 +56,11 @@
 
 .trap-link{
 	font-weight: bold;
-
-
+}
 
 @media (max-width: 768px) {
   .main{
-  	 margin-top: 60px;
+  	 margin-top: 20px;
   }
 }
 
