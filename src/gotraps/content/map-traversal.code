@@ -8,7 +8,7 @@ func main() {
 	m["one"] = 1
 	m["two"] = 2
 	m["three"] = 3
-	m["for"] = 4
+	m["four"] = 4
 	m["five"] = 5
 
 	for name, value := range m {
