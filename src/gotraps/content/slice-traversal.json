@@ -1,6 +1,6 @@
 {
  "trap": { 
  	"title": "Slice traversal",
- 	"intro": "How many nephews will be greeted?"
+ 	"intro": "Which nephews will be greeted? Which won't?"
  }
 }

@@ -1,4 +1,10 @@
-<b><a href="https://golang.org/doc/effective_go.html#for">range</a></b> with only one variable yields the index, not
-the value. To iterate over the values and ignore the indexes, use the 
-<a href="https://golang.org/doc/effective_go.html#blank">blank identifier</a> :
-<code>for _, nephew := range nephews</code>
+<p>
+	<b><a href="https://golang.org/doc/effective_go.html#for">range</a></b> (over a slice) with only one variable yields the index, not
+	the value. To iterate over the values and ignore the indexes, use the 
+	<a href="https://golang.org/doc/effective_go.html#blank">blank identifier</a> :
+	<code>for _, nephew := range nephews</code>
+</p>
+<p>
+	The result may surprise a beginner the first time, but Go programmers enjoy getting
+	both the key and the value as iteration variables.
+</p>
