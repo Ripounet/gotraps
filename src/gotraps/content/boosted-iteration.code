@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func main() {
+	twoNephews := []string{"Huey", "Dewey"}
+	threeNephews := append(twoNephews , "Louie")
+
+	for _, nephew := range threeNephews {
+		go func(){
+			fmt.Println("Hello", nephew)
+		}()
+	}	
+}
