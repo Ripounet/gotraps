@@ -1,2 +1,8 @@
-There is no guarantee regarding the order of iteration in a hash map. The <b>range</b> order for a map is not the order
-in which the elements were inserted.
+<p>
+  There is no guarantee regarding the order of iteration in a hash map. The <b>range</b> order for a map is not the order
+  in which the elements were inserted.
+</p>
+<p>
+  A very nice feature of maps is that <a href="http://blog.golang.org/go-maps-in-action#TOC_7.">the runtime randomizes map iteration order</a>.
+  This alerts early a beginner who would by mistake rely on iteration order being the insertion order, or iteration order being stable between executions of the loop.
+</p>
