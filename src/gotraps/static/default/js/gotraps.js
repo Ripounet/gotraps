@@ -78,6 +78,7 @@
 	
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
+		var trapname=$("#trap-title").html();
 		//var compileUrl = "http://play.golang.org/compile"; 
 		// ^^ would fail due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
@@ -86,7 +87,7 @@
 		// Todo spinner?
 		$("#stdout").html("<i>compiling...</i>");
 		$.post( compileUrl, 
-				{ version: "2", body: code },
+				{ version: "2", body: code, trapname: trapname },
 				function(data) {
 					//alert(data);
 					var events = data.Events;
