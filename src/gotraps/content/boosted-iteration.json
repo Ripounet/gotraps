@@ -1,6 +1,6 @@
 {
  "trap": { 
- 	"title": "Boosted slice traversal",
+ 	"title": "Boosted iteration",
  	"intro": "How about greeting all the nephews in parallel? This might be hard to pronounce."
  }
 }

@@ -4,7 +4,7 @@ import "fmt"
 import "math/rand"
 
 // The actual mean may not be an integer.
-// This calculates the FLOOR of the actual mean of a and b.
+// This calculates the TRUNCATED VALUE (rounded towards zero) of the actual mean of a and b.
 func integerMean(a, b int) int {
 	return (a + b) / 2
 }
@@ -28,10 +28,10 @@ func main() {
 
 		if m < a {
 			lower++
-		} else if b < m {
-			greater++
 		} else if a <= m && m <= b {
 			between++
+		} else if b < m {
+			greater++
 		} else {
 			noneOfTheAbove++
 		}

@@ -79,6 +79,15 @@
 	cursor: pointer;
 }
 
+a.playground {
+  padding-left: 18px;
+  padding-right: 3px;
+  background-image: url(/static/default/img/playground_mini.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  border: 1px #DDD solid;
+}
+
 #see-also li.sep{
 	margin-top: 30px;
 }
