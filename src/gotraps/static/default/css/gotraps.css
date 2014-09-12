@@ -53,6 +53,9 @@
 	z-index: 860;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+  color: #CCC;
+}
 
 .trap-link{
 	font-weight: bold;
