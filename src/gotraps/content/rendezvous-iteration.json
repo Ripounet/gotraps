@@ -1,6 +1,6 @@
 {
  "trap": { 
  	"title": "Rendezvous",
- 	"intro": "TODO rdv"
+ 	"intro": "The main goroutine must use some synchronization when it uses worker goroutine. Here is a nice pattern using <a href=\"http://golang.org/pkg/sync/#WaitGroup\">sync.WaitGroup</a>. What does it print?"
  }
 }

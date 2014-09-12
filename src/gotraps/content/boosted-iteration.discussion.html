@@ -1,3 +1,25 @@
 <p>
-	TODO boosted discuss.
+	This is a very common beginner mistake : launch some work in goroutines, and exit without waiting for 
+	them to complete. <a href="https://golang.org/ref/spec#Program_execution">The Specification</a> states :
+	<blockquote>
+		<p>
+			When <i>[the main]</i> function invocation returns, the program exits. It does not wait for other (non-main) goroutines to complete.
+		</p> 
+	</blockquote>  
+</p>
+<p>
+	There exist several ways to wait for other goroutine :
+	<ul>
+		<li>
+			<a href="http://golang.org/pkg/time/#Sleep">time.Sleep</a>. <b>Don't do this!</b> You cannot rely on the "expected" execution time of other 
+			goroutines.
+		</li>
+		<li>
+			Read <b>n</b> values in a channel. Each of your <b>n</b> work goroutines writes a value to this channel. 
+			The value itself is unimportant, use type <code>bool</code> or <code>struct{}</code>.
+		</li>
+		<li>
+			Use a <a href="http://golang.org/pkg/sync/#WaitGroup">sync.WaitGroup</a>. This is the preferred way.
+		</li>
+	</ul>
 </p>

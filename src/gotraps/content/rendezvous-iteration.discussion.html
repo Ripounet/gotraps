@@ -1,3 +1,8 @@
 <p>
-	TODO rdv discuss.
+	This is a classic problem when closure elements are accessed by concurrent processes. Here the value of the iteration variable <code>nephew</code> changes at
+	each step so the most probable output is <code>Louie</code> being greeted three times. You must <b>capture</b> the current value of <code>nephew</code>
+	either by declaring a "copying" variable inside the <code>for</code> block, or by passing <code>nephew</code> as a function argument.
+</p>
+<p>
+	The same problem exists in some other languages, e.g. Javascript.
 </p>

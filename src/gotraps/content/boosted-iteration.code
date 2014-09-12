@@ -6,7 +6,8 @@ func main() {
 	twoNephews := []string{"Huey", "Dewey"}
 	threeNephews := append(twoNephews , "Louie")
 
-	for _, nephew := range threeNephews {
+	for i := range threeNephews {
+		nephew := threeNephews[i]
 		go func(){
 			fmt.Println("Hello", nephew)
 		}()
