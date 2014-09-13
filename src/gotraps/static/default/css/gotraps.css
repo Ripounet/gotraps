@@ -61,6 +61,34 @@
 	font-weight: bold;
 }
 
+.type-green{
+  content: url('/static/default/img/green_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-orange{
+  content: url('/static/default/img/orange_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-red{
+  content: url('/static/default/img/red_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-yellow{
+  content: url('/static/default/img/yellow_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
 @media (max-width: 768px) {
   .main{
   	 margin-top: 20px;

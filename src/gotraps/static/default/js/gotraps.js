@@ -122,6 +122,10 @@
 	$(".trap-list li a").click(highlightTrapInMenus);
 	$(".sidebar li a").click(highlightTrapInMenus);
 	
+	$(".type-green").attr("title","Beginner");
+	$(".type-orange").attr("title","Tricky");
+	$(".type-yellow").attr("title","FYI");
+	
 	// Bookmarkable anchors
 	if( window.location.hash.indexOf("#") != -1 ){
 		$(".sidebar li").removeClass("active");
