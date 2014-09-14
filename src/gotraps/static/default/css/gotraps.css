@@ -53,6 +53,10 @@
 	z-index: 860;
 }
 
+.navbar-fixed-top .navbar-collapse {
+  max-height: 600px;
+}
+
 .navbar-inverse .navbar-nav > li > a {
   color: #CCC;
 }
