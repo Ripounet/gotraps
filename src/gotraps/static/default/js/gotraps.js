@@ -95,7 +95,7 @@
 					events.forEach(function(event){
 						output += event.Message;
 					});
-					$("#stdout").html(output);
+					$("#stdout").text(output);
 					hide("#compile-errors");
 				},
 				"json")
