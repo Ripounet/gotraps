@@ -4,7 +4,7 @@
 </p>
 <p>
 	The problem is that <code>msg, err := greet(name)</code> does declare a new variable <code>msg</code>, and also 
-	accidentaly shadows the return parameter <code>err</code>. This is tricky because using the bucktooth
+	accidentally shadows the result parameter <code>err</code>. This is tricky because using the bucktooth
 	operator <code>:=</code> allows mixing new and existing variables, and it works well on 
 	<a href="http://play.golang.org/p/Fhv5R1AK-M" class="playground" target="_blank">a very similar code</a>. It depends whether the scope
 	of the existing variable is exactly the same as the scope of the assignment, or not.
