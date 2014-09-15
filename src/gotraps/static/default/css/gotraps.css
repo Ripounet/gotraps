@@ -120,12 +120,16 @@
 }
 
 a.playground {
-  padding-left: 18px;
-  padding-right: 3px;
+  padding-left: 19px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
   background-image: url(/static/default/img/playground_mini.png);
   background-repeat: no-repeat;
   background-position: left;
-  border: 1px #DDD solid;
+  border: 1px #DD0 solid;
+  background-color: #FFD;
 }
 
 #see-also li.sep{
