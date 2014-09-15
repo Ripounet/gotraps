@@ -1,0 +1,10 @@
+<p>
+	The <a href="https://golang.org/ref/spec#Type_assertions">spec on Type assertions</a> for <code>v, ok = x.(T)</code> states :
+	<blockquote>
+				If the assertion <i>[doesn't hold]</i>, the expression returns (Z, false) where Z is the zero value for type T.
+	</blockquote>
+</p>
+<p>
+	In the case of Rosie, the "type asserted" <code>x</code> variable in the <code>else{...}</code> block is a <code>Human</code> with zero value.
+	It shadows the initial <code>Dog</code> value of <code>x</code>.
+</p>
