@@ -19,7 +19,7 @@ func filterGreet(name string) (greeting string, err error) {
     if name == "Huey" || name == "Dewey" || name == "Louie" {
       greeting = msg
     } else {
-      err = fmt.Errorf("not a legit nephew : \"%s\"", name)
+      err = fmt.Errorf("not a legit nephew : %q", name)
       greeting = fmt.Sprintf("No greeting because of error [%v]", err.Error())
     }
   }
