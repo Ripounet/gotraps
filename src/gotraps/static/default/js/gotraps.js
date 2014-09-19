@@ -91,12 +91,22 @@
 				function(data) {
 					//alert(data);
 					var events = data.Events;
-					var output = "";
-					events.forEach(function(event){
-						output += event.Message;
-					});
-					$("#stdout").text(output);
-					hide("#compile-errors");
+					var errors = data.Errors;
+					if(events){
+						var output = "";
+						events.forEach(function(event){
+							output += event.Message;
+						});
+						$("#stdout").text(output);
+					}else{
+						hide("#stdout");
+					}
+					if(errors){
+				        $("#compile-errors").text(errors);
+				        show("#compile-errors");
+					}else{
+						hide("#compile-errors");
+					}
 				},
 				"json")
 			    .fail( function(xhr, textStatus, errorThrown) {
