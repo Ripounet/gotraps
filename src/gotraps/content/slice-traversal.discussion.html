@@ -5,6 +5,12 @@
 	<code>for _, nephew := range nephews</code>. <a href="http://play.golang.org/p/w6F_L6j0ra" class="playground" target="_blank">Try it</a>.
 </p>
 <p>
-	The result may surprise a beginner the first time, but Go programmers enjoy getting
-	both the key and the element as iteration variables.
+	The result may surprise a beginner the first time, but Go programmers enjoy the <code>range</code> construct
+	because it gives both the key and the element as iteration variables.
+</p>
+<p>
+	When the type of your slice elements is not <code>int</code>, confusion is unlikely because the compiler won't
+	let you use the index instead of the element: iteration variables are strongly typed and the types would mismatch.
+	But if you're iterating over a <code>[]int</code>, you have to carefully name and use the index and the element: the
+	compiler won't shout.
 </p>
