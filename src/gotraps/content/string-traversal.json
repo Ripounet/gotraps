@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "String traversal",
- 	"intro": "You can iterate on characters of a string. What will be printed?"
+ 	"intro": "You can iterate on characters of a string. What will be printed?",
+ 	"previous": "slice-traversal",
+ 	"next": "map-traversal"
  }
 }

@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Append",
- 	"intro": "Built-in function <b><a href=\"http://golang.org/doc/effective_go.html#append\">append</a></b> takes a slice as parameter, appends an element to it, and returns the new slice. <br/> Does it lead to buffer overflow? No, because the slice grows when needed by automatic reallocation. <br/> Is it safe to append concurrently to the same slice by multiple goroutines? No, the programmer must carefully think about synchronization to avoid race conditions. <br/> So will it behave as expected when used in a single goroutine? Well, try to understand this code and guess the output:"
+ 	"intro": "Built-in function <b><a href=\"http://golang.org/doc/effective_go.html#append\">append</a></b> takes a slice as parameter, appends an element to it, and returns the new slice. <br/> Does it lead to buffer overflow? No, because the slice grows when needed by automatic reallocation. <br/> Is it safe to append concurrently to the same slice by multiple goroutines? No, the programmer must carefully think about synchronization to avoid race conditions. <br/> So will it behave as expected when used in a single goroutine? Well, try to understand this code and guess the output:",
+ 	"previous": "watchman-2",
+ 	"next": "just-saying"
  }
 }

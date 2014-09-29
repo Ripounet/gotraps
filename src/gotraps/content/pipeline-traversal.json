@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Pipeline traversal in a template",
- 	"intro": "Let's try the <a href=\"http://golang.org/pkg/text/template/\">templating</a> facility to iterate over a slice. What gets printed?"
+ 	"intro": "Let's try the <a href=\"http://golang.org/pkg/text/template/\">templating</a> facility to iterate over a slice. What gets printed?",
+ 	"previous": "rendezvous-iteration",
+ 	"next": "collatz-conjecture"
  }
 }

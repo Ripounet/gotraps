@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Server main loop",
- 	"intro": "A <b>select</b> inside a <b>for</b> is a common idiom for receiving various events in a loop.<br/> This code wants to find the 3 smallest positive integers that are multiples of 17 and 38. What does it print?"
+ 	"intro": "A <b>select</b> inside a <b>for</b> is a common idiom for receiving various events in a loop.<br/> This code wants to find the 3 smallest positive integers that are multiples of 17 and 38. What does it print?",
+ 	"previous": "symmetry-2",
+ 	"next": "date-format"
  }
 }

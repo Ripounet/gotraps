@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Slice traversal",
- 	"intro": "Which nephews will be greeted? Which won't?"
+ 	"intro": "Which nephews will be greeted? Which won't?",
+ 	"previous": "date-format",
+ 	"next": "string-traversal"
  }
 }

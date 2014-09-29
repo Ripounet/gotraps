@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Map traversal",
- 	"intro": "We want to write the english word for each of these numbers. What happens?"
+ 	"intro": "We want to write the english word for each of these numbers. What happens?",
+ 	"previous": "string-traversal",
+ 	"next": "boosted-iteration"
  }
 }

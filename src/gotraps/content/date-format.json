@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Date format",
- 	"intro": "A nice way to avoid geographical confusion for a date is to write the year, then the month, then the day (<a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a>). What is the result?"
+ 	"intro": "A nice way to avoid geographical confusion for a date is to write the year, then the month, then the day (<a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a>). What is the result?",
+ 	"previous": "event-loop",
+ 	"next": "slice-traversal"
  }
 }

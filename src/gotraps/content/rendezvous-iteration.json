@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Rendezvous iteration",
- 	"intro": "The main goroutine must use some synchronization when it uses worker goroutine. Here is a nice pattern using <a href=\"http://golang.org/pkg/sync/#WaitGroup\">sync.WaitGroup</a>. What does it print?"
+ 	"intro": "The main goroutine must use some synchronization when it uses worker goroutine. Here is a nice pattern using <a href=\"http://golang.org/pkg/sync/#WaitGroup\">sync.WaitGroup</a>. What does it print?",
+ 	"previous": "boosted-iteration",
+ 	"next": "pipeline-traversal"
  }
 }

@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Watchman 2",
- 	"intro": "This is another security filtering system, and this time an impostor shows up."
+ 	"intro": "This is another security filtering system, and this time an impostor shows up.",
+ 	"previous": "watchman",
+ 	"next": "append"
  }
 }

@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Map indexing",
- 	"intro": "Does this compile? Do you get a runtime panic? Do you get a value printed?"
+ 	"intro": "Does this compile? Do you get a runtime panic? Do you get a value printed?",
+ 	"previous": "just-saying",
+ 	"next": "addition"
  }
 }

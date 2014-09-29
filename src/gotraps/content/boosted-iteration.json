@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Boosted iteration",
- 	"intro": "How about greeting all the nephews in parallel? This might be hard to pronounce."
+ 	"intro": "How about greeting all the nephews in parallel? This might be hard to pronounce.",
+ 	"previous": "map-traversal",
+ 	"next": "rendezvous-iteration"
  }
 }

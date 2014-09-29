@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Symmetry",
- 	"intro": "What could possibly go wrong?"
+ 	"intro": "What could possibly go wrong?",
+ 	"previous": "pretty",
+ 	"next": "symmetry-2"
  }
 }

@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "",
- 	"intro": ""
+ 	"intro": "",
+ 	"previous": "",
+ 	"next": ""
  }
 }

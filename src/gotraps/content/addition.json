@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Addition",
- 	"intro": "Are you good at mental calculation? Can you guess the result before running this code?"
+ 	"intro": "Are you good at mental calculation? Can you guess the result before running this code?",
+ 	"previous": "map-indexing",
+ 	"next": "mean"
  }
 }

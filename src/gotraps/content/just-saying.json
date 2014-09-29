@@ -1,6 +1,8 @@
 {
  "trap": { 
  	"title": "Just saying",
- 	"intro": "What does Rosie say?"
+ 	"intro": "What does Rosie say?",
+ 	"previous": "append",
+ 	"next": "map-indexing"
  }
 }
