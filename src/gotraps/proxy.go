@@ -51,7 +51,8 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Temporary extra request, just to check if User-Agent header is correct
-	urlfetch.Client(c).PostForm("http://antipastebin.appspot.com/echo", values)
+	// urlfetch.Client(c).PostForm("http://antipastebin.appspot.com/echo", values)
+	//  ok: the header is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
 }
 
 const REMOTE_PLAYGROUND_COMPILE_URL = "http://play.golang.org/compile"
@@ -64,6 +65,8 @@ const GOTRAPS_UNIQUE_USER_AGENT = "go-traps.appspot.com"
 // identifier string to allow servers to identify App Engine requests. 
 // The appended string has the format "AppEngine-Google; (+http://code.google.com/appengine; appid: APPID)", 
 // where APPID is your app's identifier."
+//
+// After further investigation: the header value is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
 func post(c appengine.Context, values url.Values) (*http.Response, error) {
 	return urlfetch.Client(c).PostForm(REMOTE_PLAYGROUND_COMPILE_URL, values)
 }
