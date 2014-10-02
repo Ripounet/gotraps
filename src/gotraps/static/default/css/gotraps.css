@@ -53,9 +53,44 @@
 	z-index: 860;
 }
 
+.navbar-fixed-top .navbar-collapse {
+  max-height: 600px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #CCC;
+}
 
 .trap-link{
 	font-weight: bold;
+}
+
+.type-green{
+  content: url('/static/default/img/green_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-orange{
+  content: url('/static/default/img/orange_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-red{
+  content: url('/static/default/img/red_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
+}
+
+.type-yellow{
+  content: url('/static/default/img/yellow_16.png');
+  margin-left: -12px;
+  padding-right: 5px;
+  height: 14px;
 }
 
 @media (max-width: 768px) {
@@ -71,12 +106,30 @@
 	margin-bottom: 20px;
 }
 
+#trap-intro code{
+  color: #007;
+  background-color: #f4f2f9;
+}
+
 #compile-errors{
 	color: #B00;
 }
 
 #title-discussion {
 	cursor: pointer;
+}
+
+a.playground {
+  padding-left: 19px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
+  background-image: url(/static/default/img/playground_mini.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  border: 1px #DD0 solid;
+  background-color: #FFD;
 }
 
 #see-also li.sep{

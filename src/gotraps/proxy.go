@@ -19,7 +19,9 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 
 	trapcodeEscaped := r.FormValue("body")
-	//c.Infof("%v", trapcodeEscaped)
+	trapname := r.FormValue("trapname")
+	c.Infof("Compile [%v]", trapname)
+	
 	trapcode := html.UnescapeString(trapcodeEscaped)
 	values := url.Values{
 		"version": []string{"2"},

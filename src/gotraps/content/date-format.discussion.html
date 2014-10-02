@@ -1,0 +1,10 @@
+<p>
+  The <a href="http://golang.org/pkg/time/#Time.Format">time.Time.Format</a> and
+  <a href="http://golang.org/pkg/time/#Parse">time.Parse</a> functions expect a layout as parameter.
+  This layout doesn't consist in initials (Y, M, D...). It is actually the desired formatted string of the reference time 
+  <code>Mon Jan 2 15:04:05 -0700 MST 2006</code> (equals to Unix time <code>1136239445</code>),
+  and it is <i><b>not</b></i> the value of the input date.
+</p>
+<p>
+  Although useful, this convention is a difficulty for beginners.
+</p>

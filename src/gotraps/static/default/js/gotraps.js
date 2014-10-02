@@ -78,6 +78,7 @@
 	
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code-hidden").html();
+		var trapname=$("#trap-title").html();
 		//var compileUrl = "http://play.golang.org/compile"; 
 		// ^^ would fail due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
@@ -86,16 +87,26 @@
 		// Todo spinner?
 		$("#stdout").html("<i>compiling...</i>");
 		$.post( compileUrl, 
-				{ version: "2", body: code },
+				{ version: "2", body: code, trapname: trapname },
 				function(data) {
 					//alert(data);
 					var events = data.Events;
-					var output = "";
-					events.forEach(function(event){
-						output += event.Message;
-					});
-					$("#stdout").html(output);
-					hide("#compile-errors");
+					var errors = data.Errors;
+					if(events){
+						var output = "";
+						events.forEach(function(event){
+							output += event.Message;
+						});
+						$("#stdout").text(output);
+					}else{
+						hide("#stdout");
+					}
+					if(errors){
+				        $("#compile-errors").text(errors);
+				        show("#compile-errors");
+					}else{
+						hide("#compile-errors");
+					}
 				},
 				"json")
 			    .fail( function(xhr, textStatus, errorThrown) {
@@ -120,6 +131,10 @@
 	
 	$(".trap-list li a").click(highlightTrapInMenus);
 	$(".sidebar li a").click(highlightTrapInMenus);
+	
+	$(".type-green").attr("title","Beginner");
+	$(".type-orange").attr("title","Tricky");
+	$(".type-yellow").attr("title","FYI");
 	
 	// Bookmarkable anchors
 	if( window.location.hash.indexOf("#") != -1 ){

@@ -1,0 +1,13 @@
+<p>
+  The method receiver, just like the arguments, is always passed by value. This means that when
+  the method <code>reflect</code> is called, the Point is actually copied, then the copy is
+  transformed and thrown away.
+</p>
+<p>
+  If your want a method to modify the content of a struct, then you must declare a pointer receiver
+  type. <a href="http://play.golang.org/p/FftVX-zHkA" class="playground" target="_blank">Try it here</a>.
+</p>
+<p>
+  A useful guide to decide whether to declare a method receiver as a pointer type or not
+  is in the FAQ: <a href="https://golang.org/doc/faq#methods_on_values_or_pointers">Should I define methods on values or pointers?</a>.
+</p>

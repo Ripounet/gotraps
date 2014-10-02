@@ -1,6 +1,8 @@
-<div id="trap-discussion" class="panel-body">
-Map indexing with non-existent index doesn't panic, it yields the zero value of the value type. <br>
+<p>
+Map indexing with non-existent index doesn't panic, it yields the zero value of the element type. <br>
 Use the two variables assignment <b>v, ok := m["four"]</b> to check if requested index was actually in the map or not. 
-It is called the "comma ok" idiom. <br>
+It is called the "comma ok" idiom.
+</p>
+<p>
 Reference: <a href="http://golang.org/doc/effective_go.html#maps">http://golang.org/doc/effective_go.html#maps</a>
-</div>
+</p>
