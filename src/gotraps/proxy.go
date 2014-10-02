@@ -48,6 +48,8 @@ func compile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Temporary extra request, just to check if User-Agent header is correct
+	urlfetch.Client(c).PostForm("http://antipastebin.appspot.com/echo", values)
 }
 
 const REMOTE_PLAYGROUND_COMPILE_URL = "http://play.golang.org/compile"
