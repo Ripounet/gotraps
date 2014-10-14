@@ -57,7 +57,6 @@
 		$.get(codepath, function(data) {
 			var code= data;
 			$("#gotrap-code").html(code);
-			$("#gotrap-code-hidden").html(code);
 		});
 		
 		// Get the trap metadata
@@ -77,7 +76,7 @@
 	}
 	
 	$("#btn-run").click(function() {
-		var code=$("#gotrap-code-hidden").html();
+		var code=$("#gotrap-code").text();
 		var trapname=$("#trap-title").html();
 		//var compileUrl = "http://play.golang.org/compile"; 
 		// ^^ would fail due to same-origin policy!
