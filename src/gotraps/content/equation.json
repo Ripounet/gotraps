@@ -1,0 +1,6 @@
+{
+ "trap": { 
+ 	"title": "Equation",
+ 	"intro": "You can avoid some code repetition, using <code>defer</code> and named return parameters."
+ }
+}
