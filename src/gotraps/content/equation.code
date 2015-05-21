@@ -8,12 +8,13 @@ import (
 
 func main() {
   sols := solveQuadratic(-1.0, 2.0, 3.0)
-  fmt.Println("Solutions = ", sols)
+  fmt.Println("Solutions =", sols)
 }
 
 // Solves ax²+bx+c=0
 func solveQuadratic(a, b, c float64) (solutions []float64) {
   defer log("Found", len(solutions), "solutions")
+
   discriminant := b*b - 4*a*c
   switch {
   case discriminant < 0.0:
