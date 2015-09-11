@@ -13,6 +13,7 @@ func main() {
 	s := []Point{
 		{1, 2},
 		{3, 4},
+		{5, 6},
 	}
 	s[0].reflect()
 	s[1].reflect()
