@@ -1,0 +1,6 @@
+{
+ "trap": { 
+ 	"title": "Yet another iteration",
+ 	"intro": "An array, a WaitGroup for synchro, and a named func to launch concurrently."
+ }
+}
