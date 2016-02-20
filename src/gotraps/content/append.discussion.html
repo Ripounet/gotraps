@@ -1,5 +1,6 @@
 <b>append</b> can be elusive because its first argument and its result may share the same underlying array... or not. 
 Sometimes it will overwrite existing elements that are beyond initial length but within initial capacity.<br>
+A good rule of thumb for non-specialists would be "never call <b>append</b> without assigning back to the same variable".<br>
 References : 
 <ul>
 	<li><a href="http://blog.golang.org/slices">http://blog.golang.org/slices</a></li>
