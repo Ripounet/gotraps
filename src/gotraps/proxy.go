@@ -21,7 +21,7 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	trapcodeEscaped := r.FormValue("body")
 	trapname := r.FormValue("trapname")
 	c.Infof("Compile [%v]", trapname)
-	
+
 	trapcode := html.UnescapeString(trapcodeEscaped)
 	values := url.Values{
 		"version": []string{"2"},
@@ -55,15 +55,15 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	//  ok: the header is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
 }
 
-const REMOTE_PLAYGROUND_COMPILE_URL = "http://play.golang.org/compile"
+const REMOTE_PLAYGROUND_COMPILE_URL = "https://play.golang.org/compile"
 const GOTRAPS_UNIQUE_USER_AGENT = "go-traps.appspot.com"
 
 // This works but doesn't explicitly add User-Agent header
 //
 // However according to https://developers.google.com/appengine/docs/go/urlfetch/#headers_identifying_request_source :
-// "User-Agent. This header can be modified but App Engine will append an 
-// identifier string to allow servers to identify App Engine requests. 
-// The appended string has the format "AppEngine-Google; (+http://code.google.com/appengine; appid: APPID)", 
+// "User-Agent. This header can be modified but App Engine will append an
+// identifier string to allow servers to identify App Engine requests.
+// The appended string has the format "AppEngine-Google; (+http://code.google.com/appengine; appid: APPID)",
 // where APPID is your app's identifier."
 //
 // After further investigation: the header value is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
