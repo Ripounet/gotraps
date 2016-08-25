@@ -53,14 +53,14 @@
 	function loadTrap(item){
 		//console.log("loadTrap("+item+")");
 		// Get the snippet
-		var codepath = "content/" + item + ".code";
+		var codepath = "content/" + item + "/code.go";
 		$.get(codepath, function(data) {
 			var code= data;
 			$("#gotrap-code").html(code);
 		});
 		
 		// Get the trap metadata
-		var metapath = "content/" + item + ".json";
+		var metapath = "content/" + item + "/trap.json";
 		$.getJSON(metapath, function(data, status, xhr) {
 			var trap= data.trap;
 			$("#trap-title").html(trap.title);
@@ -68,7 +68,7 @@
 		});
 
 		// Get the discussion text
-		var discussionpath = "content/" + item + ".discussion.html";
+		var discussionpath = "content/" + item + "/discussion.html";
 		$.get(discussionpath, function(data) {
 			var discussion= data;
 			$("#trap-discussion").html(discussion);
