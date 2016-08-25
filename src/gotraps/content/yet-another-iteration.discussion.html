@@ -1,3 +1,7 @@
 <p>
 	A WaitGroup must not be copied or passed by value. You must pass a pointer. See the very similar <a href="http://play.golang.org/p/f8euWXPdxy" class="playground" target="_blank">correct code</a>: only two characters <i>&amp;</i> and <i>*</i> added.
 </p>
+
+<p>
+	Since Go 1.7, <a href="https://godoc.org/golang.org/x/tools/cmd/vet">vet</a> now emits a warning when copying a WaitGroup, or a Cond, or a Pool, or a Mutex. Use vet!
+</p>
