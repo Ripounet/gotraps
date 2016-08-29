@@ -159,4 +159,13 @@
 	function log(msg){
 		console.log(msg);
 	}
+
+	var lefteye = $("img.left-eye");
+	var righteye = $("img.right-eye");
+	$("body").mousemove(function(e) {
+		// Homepage illustration animation
+		lefteye.css({ transform: "rotate( " + (180 - e.pageY/3) + "deg)" });
+		righteye.css({ transform: "rotate( " + (e.pageX/3) + "deg)" });
+	})
+
 })(jQuery);
