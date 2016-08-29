@@ -99,11 +99,25 @@
   }
 }
 
+@media (max-width: 768px) {
+  .desktop{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile{
+    display: none;
+  }
+}
+
+
 #overview .illustration {
 	margin-top: 20px;
 	margin-left: -40px;
 	margin-right: 20px;
 	margin-bottom: 20px;
+  max-width: 95%;
 }
 
 #trap-intro code{
