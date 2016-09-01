@@ -78,7 +78,7 @@
 	$("#btn-run").click(function() {
 		var code=$("#gotrap-code").text();
 		var trapname=$("#trap-title").html();
-		//var compileUrl = "http://play.golang.org/compile"; 
+		//var compileUrl = "https://play.golang.org/compile"; 
 		// ^^ would fail due to same-origin policy!
 		var compileUrl = "/compile";  // <- this is a custom proxy
 		show("#collapse-output");
