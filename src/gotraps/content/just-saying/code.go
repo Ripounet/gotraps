@@ -6,7 +6,7 @@ func main() {
 	var x Animal = Dog{"Rosie"}
 
 	if x, ok := x.(Human); ok {
-		fmt.Println("%v doesn't want to be treated like dogs and cats.", x.lastName)
+		fmt.Println(x.lastName, "doesn't want to be treated like dogs and cats.")
 	} else {
 		fmt.Println(x.Say())
 	}
