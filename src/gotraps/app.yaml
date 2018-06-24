@@ -7,18 +7,24 @@ handlers:
 - url: /static
   static_dir: static
   expiration: "1h"
+  secure: always
 - url: /assets
   static_dir: static/workaround/assets
   expiration: "1h"
+  secure: always
 - url: /content/*.json
   static_files: /content/*.json
   upload: /content/*.json
   mime_type: application/json
+  secure: always
 - url: /content
   static_dir: content
   expiration: "1h"
+  secure: always
 - url: /
   static_files: index.html
   upload: index\.html
+  secure: always
 - url: /compile
   script: _go_app
+  secure: always
