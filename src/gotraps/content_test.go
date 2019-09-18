@@ -1,4 +1,4 @@
-package gotraps
+package main
 
 import (
 	"os/exec"

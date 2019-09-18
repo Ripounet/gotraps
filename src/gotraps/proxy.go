@@ -1,26 +1,53 @@
-package gotraps
+package main
 
 import (
-	"appengine"
-	"appengine/urlfetch"
+	"context"
 	"encoding/json"
 	"fmt"
 	"html"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
+	"os"
 )
+
+func main() {
+	http.HandleFunc("/compile", compile)
+
+	// Handlers for static files: necessary for local dev.
+	// Might be bypassed/ignored by app.yaml in prod.
+	// http.Handle("/static/", http.FileServer(http.Dir("./static")))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == "" || r.URL.Path == "/" {
+			http.ServeFile(w, r, "index.html")
+		}
+	})
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("static/workaround/assets"))))
+	http.Handle("/content/", http.StripPrefix("/content/", http.FileServer(http.Dir("content"))))
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Printf("Defaulting to port %s", port)
+	}
+
+	log.Printf("Listening on port %s", port)
+	err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
+	log.Fatal(err)
+}
 
 //
 // Just forward the response from another site, to the user.
 // Used to bypass the "Access-Control-Allow-Origin" for Go snippet compilation+execution.
 //
 func compile(w http.ResponseWriter, r *http.Request) {
-	c := appengine.NewContext(r)
+	c := r.Context()
 
 	trapcodeEscaped := r.FormValue("body")
 	trapname := r.FormValue("trapname")
-	c.Infof("Compile [%v]", trapname)
+	log.Printf("Compile [%v]", trapname)
 
 	trapcode := html.UnescapeString(trapcodeEscaped)
 	values := url.Values{
@@ -32,27 +59,23 @@ func compile(w http.ResponseWriter, r *http.Request) {
 	resp, err := post(c, values)
 	//c.Infof("%v", resp)
 	if err != nil {
-		c.Errorf("%v", err)
+		log.Printf("%v", err)
 		sendJsonError(w, err)
 		return
 	}
 	defer resp.Body.Close()
 	x, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		c.Errorf("%v", err)
+		log.Printf("%v", err)
 		sendJsonError(w, err)
 		return
 	}
 	_, err = w.Write(x)
 	if err != nil {
-		c.Errorf("%v", err)
+		log.Printf("%v", err)
 		sendJsonError(w, err)
 		return
 	}
-
-	// Temporary extra request, just to check if User-Agent header is correct
-	// urlfetch.Client(c).PostForm("http://antipastebin.appspot.com/echo", values)
-	//  ok: the header is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
 }
 
 const REMOTE_PLAYGROUND_COMPILE_URL = "https://play.golang.org/compile"
@@ -67,12 +90,12 @@ const GOTRAPS_UNIQUE_USER_AGENT = "go-traps.appspot.com"
 // where APPID is your app's identifier."
 //
 // After further investigation: the header value is "AppEngine-Google; (+http://code.google.com/appengine; appid: s~go-traps)"
-func post(c appengine.Context, values url.Values) (*http.Response, error) {
-	return urlfetch.Client(c).PostForm(REMOTE_PLAYGROUND_COMPILE_URL, values)
+func post(c context.Context, values url.Values) (*http.Response, error) {
+	return http.PostForm(REMOTE_PLAYGROUND_COMPILE_URL, values)
 }
 
 // This does not work: http.DefaultTransport and http.DefaultClient are not available in App Engine.
-func postWithUserAgent(c appengine.Context, values url.Values) (*http.Response, error) {
+func postWithUserAgent(c context.Context, values url.Values) (*http.Response, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("POST", REMOTE_PLAYGROUND_COMPILE_URL, nil)
 	if err != nil {

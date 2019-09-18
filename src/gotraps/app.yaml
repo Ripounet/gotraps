@@ -1,7 +1,4 @@
-application: go-traps
-version: 0-0-1
-runtime: go
-api_version: go1
+runtime: go112
 
 handlers:
 - url: /static
@@ -26,5 +23,5 @@ handlers:
   upload: index\.html
   secure: always
 - url: /compile
-  script: _go_app
+  script: auto
   secure: always
